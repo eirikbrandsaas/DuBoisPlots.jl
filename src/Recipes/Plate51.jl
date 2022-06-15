@@ -1,4 +1,6 @@
-function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = Point.(0,0), lab_2_pos = Point.(0,0))
+function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = (0,0), lab_2_pos = (0,0))
+  lab_1_pos = Point.(lab_1_pos) # Converting both positions into Points
+  lab_2_pos = Point.(lab_2_pos)
 
   ## Setting up the data
   x_vars = data[:,Not.(y_var)]

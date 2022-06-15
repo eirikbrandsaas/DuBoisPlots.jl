@@ -57,6 +57,3 @@ jobs:
             using DuBoisPlots
             DocMeta.setdocmeta!(DuBoisPlots, :DocTestSetup, :(using DuBoisPlots); recursive=true)
             doctest(DuBoisPlots)'
-
-- name: Codecov
-  uses: codecov/codecov-action@v3.1.0

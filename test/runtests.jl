@@ -3,6 +3,7 @@ using Test
 
 using DataFrames
 using CSV
+using CairoMakie
 
 @testset "Plate 7" begin
     df = DataFrame(Year=[1980,1990],Black=[0.5,0.6],White=[0.2,0.3])
@@ -11,7 +12,7 @@ using CSV
 end
 
 @testset "Plate 51" begin
-    df = CSV.read("data/original/Plate51.csv",DataFrame)
+    df = CSV.read("../data/original/Plate51.csv",DataFrame)
     Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
         small_title = uppercase("     proportion des nègres libres et des esclaves en amérique . "),
         subtitle = uppercase("done by atlanta university . "), lab_1_name = "SLAVES \nESCLAVES", lab_2_name = "FREE — LIBRE",

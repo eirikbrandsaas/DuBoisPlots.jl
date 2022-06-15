@@ -1,4 +1,4 @@
-function Plate51Recipe(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = Point.(0,0), lab_2_pos = Point.(0,0))
+function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = Point.(0,0), lab_2_pos = Point.(0,0))
 
   ## Setting up the data
   x_vars = data[:,Not.(y_var)]

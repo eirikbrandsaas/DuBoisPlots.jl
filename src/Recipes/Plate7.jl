@@ -8,6 +8,7 @@ x-axis variable.
 df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
 Plate7(df,:t)
 ```
+"""
 function Plate7(data::DataFrame, y_var::Symbol; title="",xlabel="")
   # Assertions
   if (size(data)[2] - 1)>8

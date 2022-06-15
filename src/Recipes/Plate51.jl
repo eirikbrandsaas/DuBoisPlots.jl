@@ -4,7 +4,7 @@ Replicates Plate 51 (Stacked Area Chart).
 You must pass a DataFrame with three columns. You must specify the column symbol for the
 x-axis variable. Each row of the remaining variables must sum to 100.
 
-```jldoctest
+```jl
 df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
 Plate51(df,:t)
 ```

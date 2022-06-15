@@ -7,9 +7,10 @@ using Colors
 using Weave
 using CairoMakie
 
-# Write your package code here.
+## Include and export plate recipes
+include("Recipes/Plate7.jl")
 include("Recipes/Plate7.jl")
 
-export Plate7
+export Plate7, Plate51
 
 end

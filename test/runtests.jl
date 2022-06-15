@@ -5,12 +5,18 @@ using DataFrames
 using CSV
 
 @testset "Plate 7" begin
-    df = DataFrame(Year=[1980,1990],Black=[0.5,0.6],White=[0.2,0.3])
-    p = Plate7(df, :Year)
-        # @test typeof(p)==Figure
+    # Simple test
+    df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
+    p = Plate7(df, :t)
+
 end
 
 @testset "Plate 51" begin
+    # Simple test
+    df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
+    Plate51(df,:t)
+
+    # Testing optional arguments
     df = CSV.read("../data/original/Plate51.csv",DataFrame)
     Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
         small_title = uppercase("     proportion des nègres libres et des esclaves en amérique . "),

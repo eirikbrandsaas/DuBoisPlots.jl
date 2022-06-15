@@ -1,3 +1,14 @@
+"""
+Replicates Plate 51 (Stacked Area Chart).
+
+You must pass a DataFrame with three columns. You must specify the column symbol for the
+x-axis variable. Each row of the remaining variables must sum to 100.
+
+```jldoctest
+df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
+Plate51(df,:t)
+```
+"""
 function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = (0,0), lab_2_pos = (0,0))
   lab_1_pos = Point.(lab_1_pos) # Converting both positions into Points
   lab_2_pos = Point.(lab_2_pos)

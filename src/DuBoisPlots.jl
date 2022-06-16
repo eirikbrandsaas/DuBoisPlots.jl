@@ -6,6 +6,7 @@ using DataFrames
 using Colors
 using Weave
 using CairoMakie
+using Base: Symbol
 
 ## Include and export plate recipes
 include("Recipes/Plate7.jl")

@@ -11,6 +11,16 @@ using CSV
 
 end
 
+@testset "Plate 25" begin
+    # Simple Test
+    data = DataFrame(Year = sort(rand(6)), Value = rand(6))
+    Plate25Recipe(data, :Year, :Value, "Title")
+
+    # Testing with data
+    df = CSV.read(joinpath(@__DIR__,"../data/Plate25Recipe.csv"),DataFrame)
+    Plate25Recipe(df, :Year, :Value, "Title")
+end
+
 @testset "Plate 51" begin
     # Simple test
     df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])

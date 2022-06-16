@@ -1,8 +1,8 @@
 """
-Replicates Plate 25 (Flipped Time Series).
+Replicates Plate 53 (Violin Chart).
 
-You must pass a DataFrame with at least two columns. You must specify the column symbol for the
-x-axis variable.
+This is a violin chart which is effectively made of two symmetric charts.
+
 
 ```julia
 df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])

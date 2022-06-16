@@ -19,8 +19,11 @@ df = DataFrame(
 Plate51(df, :Year; title="Proportion of Slaves")
 ```
 
+## Index
 ```@index
 ```
+
+## Automatic docs
 
 ```@autodocs
 Modules = [DuBoisPlots]

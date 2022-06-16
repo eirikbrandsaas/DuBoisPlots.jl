@@ -1,4 +1,31 @@
-function Plate10Recipe(data::DataFrame,main_cat::Symbol, sub_cat::Symbol,
+"""
+Replicates Plate 10 (Stacked and Grouped Bar Charts).
+
+You must pass a DataFrame with five columns. The first column will be the main_cat argument
+in the function below. It should take as many values as you will have groups of bar charts.
+In the example, it takes three values, resulting in 3 groups of stacked charts. This column
+should be ordered [a a b b c c].
+
+The second column will be the sub_cat argument -- the sub-category. This column can only
+take two values. These values will correspond with the two bars in each group. In the
+example, there are two bars in each group (with three groups, six total bars). This column
+should be ordered [a b a b a b].
+
+The rest of the columns will take numeric values. There should be one column per component
+of each stacked bar chart. For example, if the bar charts have three components, there
+will be three columns corresponding to each component. Each row of these columns should sum
+to 1 or 100. A maximum of three columns can be passed.
+
+The "range" argument should take a range of integers (1:2, 4:5) which correspond to the
+indexes of the columns with numeric values.
+
+```jl
+df = DataFrame(main=["ab","ab","bc","bc","cd","cd"],sub=["a","b","a","b","a","b"],x1=[75,65,75,65,75,65],x2 = [25,35,25,35,25,35])
+Plate10(df, :main, :sub,3:4, ["ab","bc"],["a","b"],["x1","x2"], "title")
+```
+"""
+
+function Plate10(data::DataFrame,main_cat::Symbol, sub_cat::Symbol,
   main_labs::Array{String,1},sub_labs::Array{String,1}, leg_labs::Array{String,1}, title ="")
 
   # data = CSV.read(joinpath(@__DIR__,"../../data/Plate10.csv"),DataFrame)

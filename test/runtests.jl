@@ -14,11 +14,11 @@ end
 @testset "Plate 25" begin
     # Simple Test
     data = DataFrame(Year = sort(rand(6)), Value = rand(6))
-    Plate25(data, :Year, :Value, "Title")
+    j = Plate25(data, :Year, :Value, "Title")
 
     # Testing with data
     df = CSV.read(joinpath(@__DIR__,"../data/Plate25.csv"),DataFrame)
-    Plate25(df, :Year, :Value, "Title")
+    k = Plate25(df, :Year, :Value, "Title")
 end
 
 @testset "Plate 51" begin

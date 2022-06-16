@@ -14,11 +14,11 @@ end
 @testset "Plate 51" begin
     # Simple test
     df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
-    Plate51(df,:t)
+    d = Plate51(df,:t)
 
     # Testing optional arguments
     df = CSV.read("../data/original/Plate51.csv",DataFrame)
-    Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
+    e = Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
         small_title = uppercase("     proportion des nègres libres et des esclaves en amérique . "),
         subtitle = uppercase("done by atlanta university . "), lab_1_name = "SLAVES \nESCLAVES", lab_2_name = "FREE — LIBRE",
         lab_1_pos = (1830, 60), lab_2_pos = (1830, 95))
@@ -37,35 +37,35 @@ end
         r.x5 = (100 .- (r.x1 + r.x2 + r.x3 + r.x4))
 
     ## Auto
-    @test typeof(Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 = "Title",
-    title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")) == Figure
+    f=  Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 = "Title",
+    title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 
     ## Manual
-    @test typeof(Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], [45 1.2;55 4.7;60 4.5;25 2;45 5.5],[45 1.2;55 4.7;60 4.5;25 2;45 5.5],
-    title_1 = "Title", title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")) == Figure
+    g =  Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], [45 1.2;55 4.7;60 4.5;25 2;45 5.5],[45 1.2;55 4.7;60 4.5;25 2;45 5.5],
+    title_1 = "Title", title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 
     ## Legend
-    @test typeof(Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Legend", "Legend", title_1 = "Title",
-    title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")) == Figure
+    h = Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Legend", "Legend", title_1 = "Title",
+    title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 
     # Testing original data
     data = CSV.read(joinpath(@__DIR__,"../data/Plate53.csv"),DataFrame)
     ## Auto
-    @test typeof(Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],"Auto", "Auto",
+    i = Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],"Auto", "Auto",
     title_1 = "Conjugal condition of American Negroes according to age periods.",
     title_2 = "Condition conjugale des Nègres Americains au point de vue de l' age.",
-    subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")) == Figure
+    subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")
 
 
     ## Manual
-    @test typeof(Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],[45 1.2;55 4.7;95 8.5],
+    j = Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],[45 1.2;55 4.7;95 8.5],
     [25 2;45 5.5;50 8.5], title_1 = "Conjugal condition of American Negroes according to age periods.",
     title_2 = "Condition conjugale des Nègres Americains au point de vue de l' age.", subtitle = "Done by Atlanta University.",
-    bot_lab = "PER CENTS.")) == Figure
+    bot_lab = "PER CENTS.")
 
     ## Legend
-    @test typeof(Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],"Legend", "Legend",
+    k = Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],"Legend", "Legend",
     title_1 = "Conjugal condition of American Negroes according to age periods.",
     title_2 = "Condition conjugale des Nègres Americains au point de vue de l' age.",
-    subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")) == Figure
+    subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")
 end

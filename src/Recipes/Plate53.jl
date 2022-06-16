@@ -1,16 +1,34 @@
 """
 Replicates Plate 53 (Violin Chart).
 
-This is a violin chart which is effectively made of two symmetric charts.
+This is a violin chart which is effectively made of two symmetric
+charts. The first column of the dataframe should be the categories
+that define those two plots. The second column of the dataframe
+should be the sub-categories within the plots -- they will be the
+different colored regions within the chart area.
 
+The remaining columns will be the values in each region. A number of
+things are important here. First, each row of these columns should
+sum to 100 or 1.0. Second, the way this chart works is that they are
+effectively horizontal stacked bar charts with mirrored x axes. There
+are as many bars as unique values in the sub-category column.
 
 ```julia
-df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
-Plate7(df,:t)
+r = DataFrame(y_var = repeat(["A", "B", "C", "D","E","F"],2),
+  cat_var = cat(repeat(["G"],6),repeat(["H"],6), dims = (1,1)),
+  x1 = (rand(1:10, 12).+20),
+  x2 = (rand(1:10, 12).+10),
+  x3 = (rand(1:10, 12).+5),
+  x4 = (rand(1:10, 12).+2))
+
+  r.x5 = (100 .- (r.x1 + r.x2 + r.x3 + r.x4))
+
+Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 = "Title",
+  title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")) == Figure
 ```
 """
 
-function Plate53Recipe(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array, lab_pos_1, lab_pos_2; title_1 = "", title_2 = "", subtitle = "", bot_lab = "")
+function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array, lab_pos_1, lab_pos_2; title_1 = "", title_2 = "", subtitle = "", bot_lab = "")
   @assert size(unique(df[:,cat_var]))[1] == 2 # Requires two plots. Could be changed, theoretically
 
   for i in 1:size(symb_vec)[1]

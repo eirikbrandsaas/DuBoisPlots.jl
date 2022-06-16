@@ -1,5 +1,5 @@
 """
-Replicates Plate 25 (Stacked Area Chart).
+Replicates Plate 25 (Spiral line chart).
 
 You must pass a DataFrame with two columns. You must specify the column symbol for both
 columns.

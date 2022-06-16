@@ -9,6 +9,7 @@ using CairoMakie
 
 ## Include and export plate recipes
 include("Recipes/Plate7.jl")
+include("Recipes/Plate25.jl")
 include("Recipes/Plate51.jl")
 
 export Plate7, Plate51

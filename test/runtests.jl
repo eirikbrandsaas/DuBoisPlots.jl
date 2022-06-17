@@ -17,7 +17,7 @@ end
     j = Plate25(data, :Year, :Value, "Title")
 
     # Testing with data
-    df = CSV.read(joinpath(@__DIR__,"../data/Plate25.csv"),DataFrame)
+    df = CSV.read(joinpath(@__DIR__,"../data/original/Plate25.csv"),DataFrame)
     k = Plate25(df, :Year, :Value, "Title")
 end
 

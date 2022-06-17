@@ -13,6 +13,8 @@ using Statistics
 include("Recipes/Plate7.jl")
 include("Recipes/Plate25.jl")
 include("Recipes/Plate51.jl")
+include("Recipes/Plate53.jl")
+
 
 export Plate7, Plate25, Plate51
 

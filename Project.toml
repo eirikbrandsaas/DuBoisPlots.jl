@@ -12,6 +12,9 @@ Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
 Weave = "44d3d7a6-8a23-5bf8-98c5-b353f8df5ec9"
 
 [compat]
+Colors = "0.12"
+DataFrames = "1"
+Weave = "0.10"
 CSV = "0.10"
 julia = "1.5"
 

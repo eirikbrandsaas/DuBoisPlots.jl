@@ -7,6 +7,7 @@ using Colors
 using Weave
 using CairoMakie
 using Base: Symbol
+using Statistics
 
 ## Include and export plate recipes
 include("Recipes/Plate7.jl")

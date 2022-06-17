@@ -1,0 +1,19 @@
+Ages,Gender,Single,Married,Widowed
+0-15,Male,100,0,0
+15-20,Male,99,1,0
+20-25,Male,66,33,1
+25-30,Male,30,68,2
+30-35,Male,18,78,4
+35-45,Male,10,85,5
+45-55,Male,6,85,9
+55-65,Male,4,85,11
+Over 65,Male,4,76,20
+0-15,Female,100,0,0
+15-20,Female,84,16,0
+20-25,Female,38,58,4
+25-30,Female,18,74,8
+30-35,Female,12,78,10
+35-45,Female,8,76,16
+45-55,Female,6,66,28
+55-65,Female,4,52,44
+Over 65,Female,4,30,66

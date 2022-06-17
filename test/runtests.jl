@@ -49,7 +49,7 @@ end
     title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 
     # Testing original data
-    data = CSV.read(joinpath(@__DIR__,"../data/Plate53.csv"),DataFrame)
+    data = CSV.read(joinpath(@__DIR__,"../data/original/Plate53.csv"),DataFrame)
     ## Auto
     i = Plate53(data, :Ages, :Gender, [:Single, :Married, :Widowed],"Auto", "Auto",
     title_1 = "Conjugal condition of American Negroes according to age periods.",

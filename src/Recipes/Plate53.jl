@@ -24,7 +24,7 @@ r = DataFrame(y_var = repeat(["A", "B", "C", "D","E","F"],2),
   r.x5 = (100 .- (r.x1 + r.x2 + r.x3 + r.x4))
 
 Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 = "Title",
-  title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")) == Figure
+  title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 ```
 """
 

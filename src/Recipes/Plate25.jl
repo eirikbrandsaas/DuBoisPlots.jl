@@ -9,7 +9,6 @@ df = DataFrame(Year = sort(rand(6)), Value = rand(6))
 Plate25(data, :Year, :Value, "Title")
 ```
 """
-
 function Plate25(df::DataFrame,spiral::Symbol, len::Symbol, title = "")
   ## Assertions ##
   @assert size(df)[2] == 2 # There should be two columns: "Years" and "Household Value"

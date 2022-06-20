@@ -27,7 +27,6 @@ Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 
   title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 ```
 """
-
 function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array, lab_pos_1, lab_pos_2; title_1 = "", title_2 = "", subtitle = "", bot_lab = "")
   @assert size(unique(df[:,cat_var]))[1] == 2 # Requires two plots. Could be changed, theoretically
 

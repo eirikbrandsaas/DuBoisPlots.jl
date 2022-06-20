@@ -1,6 +1,6 @@
 name = "DuBoisPlots"
 uuid = "168d2eb6-d3a6-4344-96a8-585c4d8fe67b"
-authors = ["Eirik Eylands Brandsaas <eirik.e.brandsaas@frb.gov> and contributors"]
+authors = ["Eirik Eylands Brandsaas <eirik.e.brandsaas@frb.gov> and Kyra Sadovi"]
 version = "0.1.0"
 
 [deps]

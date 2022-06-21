@@ -141,7 +141,7 @@ function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array,
 
  label_positions = [lab_pos_1, lab_pos_2]
 
- if typeof(lab_pos_1) == Array{Float64, 2} && typeof(lab_pos_2) == Array{Float64,2}
+ if isa(lab_pos_1,Array{<:Number,2}) ==true && isa(lab_pos_2,Array{<:Number,2})
    for i in 1:size(label_positions)[1]
      @assert size(label_positions[i]) == (nCat,2)
      for j in 1:nCat*2
@@ -158,22 +158,6 @@ function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array,
      text!(ax2, label, position = Point.(ix2,iy2))
    end
     # This part of the if statement will automatically place labels.
-  elseif typeof(lab_pos_1) == Array{Int64, 2} && typeof(lab_pos_2) == Array{Int64,2}
-    for i in 1:size(label_positions)[1]
-      @assert size(label_positions[i]) == (nCat,2)
-      for j in 1:nCat*2
-        @assert typeof(label_positions[i][j]) == Float64 || typeof(label_positions[i][j]) == Int64
-      end
-    end
-    for i in 1:nCat
-      ix1 = lab_pos_1[i,:][1]
-      iy1 = lab_pos_1[i,:][2]
-      ix2 = lab_pos_2[i,:][1]
-      iy2 = lab_pos_2[i,:][2]
-      label = uppercase(string(symb_vec[i]))
-      text!(ax1, label, position = Point.(ix1,iy1))
-      text!(ax2, label, position = Point.(ix2,iy2))
-    end
   elseif typeof(lab_pos_1) == String && typeof(lab_pos_2) == String
     @assert lab_pos_2 == lab_pos_1
     if lab_pos_1 == "Auto"

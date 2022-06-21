@@ -1,3 +1,17 @@
+"""
+Replicates Plate 11 (Unusual line chart).
+
+You must pass a DataFrame two columns. The first column should be strings with the names of each category in the data. The
+second column should be numeric values corresponding to each of those categories.
+
+```julia
+data = CSV.read(joinpath(@__DIR__,"../../data/original/Plate11.csv"),DataFrame)
+z = Plate11(data, :Population,[-0.0,0.12], [0.09,0.1], [0.025,0.075], [0.03,-0.09], [0.035,-0.035],
+"no", "City and Rural Population \n 1890.", " negroes in cities \n of over 10,000 inhabitants",
+" negroes in cities \n from 5,000 to 10,000", " \n negroes \n in cities \n from \n 2,500 to 5,000",
+" Negroes living in the country and villages")
+```
+"""
 function spirals(a1,nrot,N::Int)
   spiral(θ, a=a1, b=1) = @. b * θ * cos(θ + a), b * θ * sin(θ + a)
   grd=range(2*π, (nrot*2+2)π,length=N)

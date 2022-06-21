@@ -1,5 +1,6 @@
 """
 Replicates Plate 10 (Stacked and Grouped Bar Charts).
+Test that this pushes
 
 You must pass a DataFrame with five columns. The first column will be the main_cat argument
 in the function below. It should take as many values as you will have groups of bar charts.

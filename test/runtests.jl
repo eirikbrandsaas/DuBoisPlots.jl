@@ -11,6 +11,15 @@ using CSV
 
 end
 
+@testset "Plate 10" begin
+    data = CSV.read(joinpath(@__DIR__,"../data/original/Plate10.csv"),DataFrame)
+    x = Plate10(data, :Age,:Population, 3:5,["15-40", "40-60", "60 and over"],["Negroes","Germany"],
+       ["Single", "Widowed and Divorced", "Married"], "Conjugal Condition")
+
+    df = DataFrame(main=["ab","ab","bc","bc","cd","cd"],sub=["a","b","a","b","a","b"],x1=[65,55,65,55,65,55,],x2 = [25,35,25,35,25,35],x3 = [10,10,10,10,10,10])
+    w = Plate10(df, :main, :sub,3:5, ["ab", "bc","cd"],["a","b"],["x1","x2","x3"], "title")
+end
+
 @testset "Testing Plate 11" begin
 
     # Testing original data

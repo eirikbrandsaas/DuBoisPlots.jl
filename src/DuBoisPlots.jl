@@ -11,11 +11,12 @@ using Statistics
 
 ## Include and export plate recipes
 include("Recipes/Plate7.jl")
+include("Recipes/Plate11.jl")
 include("Recipes/Plate25.jl")
 include("Recipes/Plate51.jl")
 include("Recipes/Plate53.jl")
 
 
-export Plate7, Plate25, Plate51, Plate53
+export Plate7, Plate11, Plate25, Plate51, Plate53
 
 end

@@ -11,6 +11,25 @@ using CSV
 
 end
 
+@testset "Testing Plate 11" begin
+
+    # Testing original data
+    data = CSV.read(joinpath(@__DIR__,"../data/original/Plate11.csv"),DataFrame)
+    z = Plate11(data, :Population,[-0.0,0.12], [0.09,0.1], [0.025,0.075], [0.03,-0.09], [0.035,-0.035],
+    "no", "City and Rural Population \n 1890.", " negroes in cities \n of over 10,000 inhabitants",
+    " negroes in cities \n from 5,000 to 10,000", " \n negroes \n in cities \n from \n 2,500 to 5,000",
+    " Negroes living in the country and villages")
+
+    # Testing new data
+    data = CSV.read(joinpath(@__DIR__,"../data/new/plate_11_new.csv"),DataFrame)
+
+    y = Plate11(data, :Population,[0.025,0.12], [0.03,0.1], [0.035,0.07], [0.035,-0.035], [0.035,-0.025],
+    "no", "Northern Illinois Black Population by County \n 2019.", " DuPage",
+    " Will", " \n Lake",
+    " Cook")
+
+    end
+
 @testset "Plate 25" begin
     # Simple Test
     data = DataFrame(Year = sort(rand(6)), Value = rand(6))
@@ -27,7 +46,7 @@ end
     d = Plate51(df,:t)
 
     # Testing optional arguments
-    df = CSV.read("../data/original/Plate51.csv",DataFrame)
+    df = CSV.read(joinpath(@__DIR__,"../data/original/Plate51.csv"),DataFrame)
     e = Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
         small_title = uppercase("     proportion des nègres libres et des esclaves en amérique . "),
         subtitle = uppercase("done by atlanta university . "), lab_1_name = "SLAVES \nESCLAVES", lab_2_name = "FREE — LIBRE",

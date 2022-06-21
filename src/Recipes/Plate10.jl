@@ -14,22 +14,29 @@ should be ordered [a b a b a b].
 The rest of the columns will take numeric values. There should be one column per component
 of each stacked bar chart. For example, if the bar charts have three components, there
 will be three columns corresponding to each component. Each row of these columns should sum
-to 1 or 100. A maximum of three columns can be passed.
+to 1 or 100. A maximum of three columns can be passed. If values are decimals, multiply them
+by 100 before running this function.
 
 The "range" argument should take a range of integers (1:2, 4:5) which correspond to the
 indexes of the columns with numeric values.
 
+The main_labs argument should be an array of strings (Array{String,1}) which correspond to
+the main_cat argument. This creates the labels for each set of grouped bars.
+
+The sub_labs argument should be an array of strings (Array{String,1}) which correspond to
+the sub_cat argument. This creates the labels for each bar in each group.
+
+The orders of the strings in both of these arrays matter!
+
 ```jl
-df = DataFrame(main=["ab","ab","bc","bc","cd","cd"],sub=["a","b","a","b","a","b"],x1=[75,65,75,65,75,65],x2 = [25,35,25,35,25,35])
-Plate10(df, :main, :sub,3:4, ["ab","bc"],["a","b"],["x1","x2"], "title")
+df = DataFrame(main=["ab","ab","bc","bc","cd","cd"],sub=["a","b","a","b","a","b"],x1=[65,55,65,55,65,55,],x2 = [25,35,25,35,25,35],x3 = [10,10,10,10,10,10])
+Plate10(df, :main, :sub,3:5, ["ab", "bc","cd"],["a","b"],["x1","x2","x3"], "title")
 ```
 """
-
-function Plate10(data::DataFrame,main_cat::Symbol, sub_cat::Symbol,
+function Plate10(data::DataFrame,main_cat::Symbol, sub_cat::Symbol, range::AbstractUnitRange,
   main_labs::Array{String,1},sub_labs::Array{String,1}, leg_labs::Array{String,1}, title ="")
 
-  # data = CSV.read(joinpath(@__DIR__,"../../data/Plate10.csv"),DataFrame)
-  df = stack(data)
+  df = stack(data,range)
 
   # Creating array of dataframes with like main categories
   grp = [df[df[:,main_cat] .== unique(df[:,main_cat])[i],:] for i in 1:size(unique(df[:,main_cat]))[1]]
@@ -122,7 +129,7 @@ function Plate10(data::DataFrame,main_cat::Symbol, sub_cat::Symbol,
 
   # Legend
   leg_colors = [colorant"#DC143C",colorant"#00AA00",colorant"#FFD700"]
-  elements = [MarkerElement(marker = :circle, markersize = 25, color = leg_colors[i]) for i in 1:length(main_labs)]
+  elements = [MarkerElement(marker = :circle, markersize = 25, color = leg_colors[i]) for i in 1:length(leg_labs)]
 
   Legend(g_leg, elements, leg_labs, nbanks = 2, framevisible = false, rowgap = 15, colgap = 100)
 

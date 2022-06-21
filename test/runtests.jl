@@ -46,7 +46,7 @@ end
     d = Plate51(df,:t)
 
     # Testing optional arguments
-    df = CSV.read("../data/original/Plate51.csv",DataFrame)
+    df = CSV.read(joinpath(@__DIR__,"../data/original/Plate51.csv"),DataFrame)
     e = Plate51(df, :Year, title = uppercase("Proportion of freemen and slaves among american negroes . "),
         small_title = uppercase("     proportion des nègres libres et des esclaves en amérique . "),
         subtitle = uppercase("done by atlanta university . "), lab_1_name = "SLAVES \nESCLAVES", lab_2_name = "FREE — LIBRE",

@@ -2,7 +2,7 @@
 Replicates Plate 11 (Unusual line chart).
 
 You must pass a DataFrame two columns. The first column should be strings with the names of each category in the data. The
-second column should be numeric values corresponding to each of those categories.
+second column should be numeric values corresponding to each of those categories. There can only be 4 rows (maximum of 4 categories).
 
 ```julia
 data = CSV.read(joinpath(@__DIR__,"../../data/original/Plate11.csv"),DataFrame)

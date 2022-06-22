@@ -20,11 +20,11 @@ by 100 before running this function.
 The "range" argument should take a range of integers (1:2, 4:5) which correspond to the
 indexes of the columns with numeric values.
 
-The main_labs argument should be an array of strings (Array{String,1}) which correspond to
-the main_cat argument. This creates the labels for each set of grouped bars.
+The `main_labs` argument should be an array of strings (Array{String,1}) which correspond to
+the `main_cat` argument. This creates the labels for each set of grouped bars.
 
-The sub_labs argument should be an array of strings (Array{String,1}) which correspond to
-the sub_cat argument. This creates the labels for each bar in each group.
+The `sub_labs` argument should be an array of strings (Array{String,1}) which correspond to
+the `sub_cat` argument. This creates the labels for each bar in each group.
 
 The orders of the strings in both of these arrays matter!
 

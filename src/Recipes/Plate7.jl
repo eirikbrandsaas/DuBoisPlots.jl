@@ -2,7 +2,8 @@
 Replicates Plate 7 (Flipped Time Series).
 
 You must pass a DataFrame with at least two columns. You must specify the column symbol for the
-x-axis variable.
+x-axis variable. Note that if you are trying to plot more than 8 lines the colors and patterns
+will repeat -- so, functionally, you should only plot up to 8 variables.
 
 ```julia
 df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])

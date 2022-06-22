@@ -2,10 +2,11 @@
 Replicates Plate 53 (Violin Chart).
 
 This is a violin chart which is effectively made of two symmetric
-charts. The first column of the dataframe should be the categories
-that define those two plots. The second column of the dataframe
-should be the sub-categories within the plots -- they will be the
-different colored regions within the chart area.
+charts. The second column of the dataframe and `y_var` argument
+should be the categories that define those two plots. The first
+column of the dataframe and `:cat_var` argument should be the
+sub-categories within the plots; they will be the different colored
+regions within the chart area.
 
 The remaining columns will be the values in each region. A number of
 things are important here. First, each row of these columns should
@@ -13,6 +14,18 @@ sum to 100 or 1.0. Second, the way this chart works is that they are
 effectively horizontal stacked bar charts with mirrored x axes. There
 are as many bars as unique values in the sub-category column.
 
+The label positions are coded such that they can either be manually or automatically positioned in each plot. To manually
+plot them, submit the string "Auto" as the value for each of the position inputs. To automatically create a legend instead
+of plotted labels, submit the string "Legend". Case-sensitive.
+
+In order to position them manually, submit two arrays for the values of lab_pos_1 and lab_pos_2. They are required
+inputs that take floats or integers as elements in the arrays. The arrays need to have two
+columns each and as many rows as there are categories. As such, it's important that the coordinates be ordered
+in the same order as symb_vec. For example:
+If `symb_vec = [:a :b]`, the order of the coordinates with respect to the categories they belong to should
+look like this: `[a_plot_1_x a_plot_1_y;b_plot_1_x b_plot_1_y]` and `[a_plot_2_x a_plot_2_y;b_plot_2_x b_plot_2_y]`.
+In order to manually position the labels, simply input those
+points (coordinates).
 ```julia
 r = DataFrame(y_var = repeat(["A", "B", "C", "D","E","F"],2),
   cat_var = cat(repeat(["G"],6),repeat(["H"],6), dims = (1,1)),
@@ -27,7 +40,8 @@ Plate53(r, :y_var, :cat_var, [:x1, :x2, :x3, :x4, :x5], "Auto", "Auto", title_1 
   title_2 = "Small Title", subtitle = "Subtitle", bot_lab = "Label")
 ```
 """
-function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array, lab_pos_1, lab_pos_2; title_1 = "", title_2 = "", subtitle = "", bot_lab = "")
+function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array, lab_pos_1, lab_pos_2;
+  title_1 = "", title_2 = "", subtitle = "", bot_lab = "")
   @assert size(unique(df[:,cat_var]))[1] == 2 # Requires two plots. Could be changed, theoretically
 
   for i in 1:size(symb_vec)[1]
@@ -125,19 +139,7 @@ function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array,
   #########################
   # Label Position Syntax #
   #########################
- # The label positions are coded such that they can either be manually or automatically positioned in each plot. To manually
- # plot them, submit the string "Auto" as the value for each of the position inputs. To automatically create a legend instead
- # of plotted labels, submit the string "Legend". Case-sensitive.
- #
- # In order to position them manually, submit two arrays for the values of lab_pos_1 and lab_pos_2. They are required
- # inputs that take floats or integers as elements in the arrays. The arrays need to have two
- # columns each and as many rows as there are categories. As such, it's important that the coordinates be ordered
- # in the same order as symb_vec. For example:
- # If symb_vec = ["a" "b" "c"], the order of the coordinates with respect to the categories they belong to should
- # look like this: ["a_plot_1" "b_plot_1" "c_plot_1"]. In order to manually position the labels, simply input those
- # points (coordinates).
 
- # This part of the if statement will code labels directly into the plot.
 
  label_positions = [lab_pos_1, lab_pos_2]
 

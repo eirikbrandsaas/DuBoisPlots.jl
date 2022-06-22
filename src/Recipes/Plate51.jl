@@ -1,17 +1,23 @@
 """
 Replicates Plate 51 (Stacked Area Chart).
 
-You must pass a DataFrame with three columns. You must specify the column symbol for the
-x-axis variable. Each row of the remaining variables must sum to 100.
+You must pass a DataFrame with three columns. The first column will specify the x axis -- this
+would be time or a similar parameter. Specify this column with the `y_var` argument. The second
+and third columns denote two categories which must sum to 100.
+
+Labels are optional arguments which can be passed as strings (title, subtitle, and labels for each
+of the two categories). If no value is passed for the `lab1_pos` and `lab2_pos` arguments, which
+are positions for each of the labels, then they will be automatically placed at (0,0), where they
+will likely not be seen. In order to place them yourself, pass an ordered pair of numbers for each.
 
 ```jl
 df = DataFrame(t=[1,2],x1=[25,35],x2=[75,65])
-Plate51(df,:t)
+Plate51(df,:t, title = "Title", small_title = "Small Title", subtitle = "Subtitle", lab_1_name = "Label 1",
+lab_2_name = "Label 2", lab_1_pos = (1.5,20), lab_2_pos = (1.5,80))
 ```
 """
-function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="", lab_1_pos = (0,0), lab_2_pos = (0,0))
-  lab_1_pos = Point.(lab_1_pos) # Converting both positions into Points
-  lab_2_pos = Point.(lab_2_pos)
+function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitle="", lab_1_name="", lab_2_name="",
+  lab_1_pos = (0,0), lab_2_pos = (0,0))
 
   ## Setting up the data
   x_vars = data[:,Not.(y_var)]
@@ -77,21 +83,8 @@ function Plate51(data::DataFrame, y_var::Symbol; title="",small_title="",subtitl
     text!(lab_2_name, align=(:center,:center), position = lab_2_pos, color = :black, textsize=30)
   end
 
-  ## The following loop is the beginnings of what could be use to generalize this to more than two variables
-
-  #for i in 2:ncol(data)
-  #  band!(ax2, y_var, x_vars[:,i-1], x_vars[:,i],
-  #  color = [colorant"#DC143C" colorant"#00AA00" colorant"#FFD700" colorant"#4682B4"][mod(i,4)+1])
-  #  text!(names(x_vars)[i], align=(:center,:center), position = Point.(median(y_var),median(x_vars[:,i])),
-  #  color = [:black :black :white :black][mod(i,4)+1], textsize=30)
-  #end
-
   hideydecorations!(ax2)
   hidespines!(ax2)
-
-# This would also have to change given a generalization to more than 2 variables. Also, they don't look great.
-# I made them white so they're easier to see, but even so they're kind of wonky. But that sort of just comes with the
-# territory of testing with a RNG.
 
  alignvec = fill((:center,:center), nrow(x_vars))
  alignvec[1] = (:left,:center)

@@ -2,11 +2,12 @@
 Replicates Plate 25 (Spiral line chart).
 
 You must pass a DataFrame with two columns. You must specify the column symbol for both
-columns.
+columns -- `spiral` should be the label for each variable, and `len` should be the numeric
+value for each variable
 
 ```jl
-df = DataFrame(Year = sort(rand(6)), Value = rand(6))
-Plate25(data, :Year, :Value, "Title")
+df = DataFrame(Year = 1:6, Value = rand(6))
+Plate25(df, :Year, :Value, "Title")
 ```
 """
 function Plate25(df::DataFrame,spiral::Symbol, len::Symbol, title = "")

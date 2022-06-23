@@ -4,6 +4,10 @@ To show how to use the package in more detail we show how to use the recipes to 
 the original plates by DuBois.
 
 ## testing
+0
+```@raw html
+<img src="figures/original-plate-07.jpg" width="660px"/>
+```
 1
 ```@raw html
 <img src="../figures/original-plate-07.jpg" width="660px"/>
@@ -15,6 +19,10 @@ the original plates by DuBois.
 3
 ```@raw html
 <img src="../../../figures/original-plate-07.jpg" width="660px"/>
+```
+4
+```@raw html
+<img src="../../../../figures/original-plate-07.jpg" width="660px"/>
 ```
 
 ## Plate 7

@@ -3,39 +3,17 @@
 To show how to use the package in more detail we show how to use the recipes to replicate 
 the original plates by DuBois.
 
-## testing
-0
-```@raw html
-<img src="assets/original-plate-07.jpg" width="660px"/>
-```
-1
-```@raw html
-<img src="../assets/original-plate-07.jpg" width="660px"/>
-```
-2
-```@raw html
-<img src="../../assets/original-plate-07.jpg" width="660px"/>
-```
-3
-```@raw html
-<img src="../../../assets/original-plate-07.jpg" width="660px"/>
-```
-4
-```@raw html
-<img src="../../../../assets/original-plate-07.jpg" width="660px"/>
-```
-
 ## Plate 7
-![Plot!](../../assets/original-plate-07.jpg)
+![Plot!](assets/original-plate-07.jpg)
 
 ## Plate 10
-![Plot!](../../assets/original-plate-10.jpg)
+![Plot!](assets/original-plate-10.jpg)
 
 ## Plate 11
-![Plot!](../../assets/original-plate-11.jpg)
+![Plot!](assets/original-plate-11.jpg)
 
 ## Plate 25
-![Plot!](../../assets/original-plate-25.jpg)
+![Plot!](assets/original-plate-25.jpg)
 
 ## Plate 51
 ```@eval
@@ -53,16 +31,16 @@ pwd()#nothing
 ```
 |Original                                     |Replication                 |
 |:-------------------------------------------:|:---------------------------|
-|![Plot!](../../../assets/original-plate-51.jpg)|![Replication](plate51.png)|
+|![Plot!](assets/original-plate-51.jpg)|![Replication](plate51.png)|
 
 ```@julia
 println(pwd())
 pwd()
 ```
 ## Plate 53
-2
-![Plot!](../../assets/original-plate-53.jpg)
-1
-![Plot!](../assets/original-plate-53.jpg)
-0
-![Plot!](assets/original-plate-53.jpg)
+|Original                                     |Replication                 |
+|:-------------------------------------------:|:---------------------------|
+|![Plot!](assets/original-plate-53.jpg)|![Replication](plate53.png)|
+|![Plot!](../assets/original-plate-53.jpg)|![Replication](plate53.png)|
+|![Plot!](./assets/original-plate-53.jpg)|![Replication](plate53.png)|
+

@@ -19,6 +19,7 @@ include("Recipes/Plate53.jl")
 
 ## Include and export DataFrames
 include("utilities.jl")
+include("Utilities.jl")
 DuBoisData = (
     Plate7 =_Plate7df(),
     Plate10 =_Plate10df(),

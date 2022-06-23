@@ -27,11 +27,15 @@ df = DataFrame(
         )
 p = Plate51(df, :Year; title="Proportion of Slaves")
 save("plate51.png", p)
+p = Plate51(DuBoisData.Plate51, :Year; title="Proportion of Slaves")
+save("plate51.png", p)
+
 pwd()#nothing
 ```
 |Original                                     |Replication                 |
 |:-------------------------------------------:|:---------------------------|
 |![Plot!](assets/original-plate-51.jpg)|![Replication](plate51.png)|
+|![Plot!](assets/original-plate-51.jpg)|![Replication](plate512.png)|
 
 ```@julia
 println(pwd())

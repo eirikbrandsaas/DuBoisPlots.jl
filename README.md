@@ -16,5 +16,5 @@ To add a new plate please do the following:
 For extra credit please also do
 
 2. Include the original data in `data/original/PlateXX.csv`
-3. Include a `.jpeg` of the original plate in `figures/`
+3. Include a `.jpeg` of the original plate in `docs/figures/`
 4. Add the plate to `docs/src/example.md`

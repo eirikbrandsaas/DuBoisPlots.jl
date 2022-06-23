@@ -107,3 +107,11 @@ end
     title_2 = "Condition conjugale des Nègres Americains au point de vue de l' age.",
     subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")
 end
+
+@testset "Data" begin
+    @test DuBoisData.Plate7.Year[1] == 1790
+    @test DuBoisData.Plate10.Population[1] == "Germany"
+    @test DuBoisData.Plate11.Population[1] == 78139
+    @test DuBoisData.Plate51.Year[1] == 1790
+    @test DuBoisData.Plate53.Married[end] == 30
+end

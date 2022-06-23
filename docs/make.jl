@@ -1,5 +1,7 @@
 using DuBoisPlots
 using Documenter
+using DataFrames
+using CairoMakie
 
 DocMeta.setdocmeta!(DuBoisPlots, :DocTestSetup, :(using DuBoisPlots); recursive=true)
 
@@ -16,6 +18,7 @@ makedocs(;
     ),
     pages=[
         "Home" => "index.md",
+        "Examples" => "examples.md",
     ],
 )
 

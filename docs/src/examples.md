@@ -31,11 +31,11 @@ pwd()#nothing
 ```
 |Original                                     |Replication                 |
 |:-------------------------------------------:|:---------------------------|
-|![Plot!](../../figures/original-plate-51.jpg)|![Replication](plate51.png)|
+|![Plot!](../../../figures/original-plate-51.jpg)|![Replication](plate51.png)|
 
 ```@julia
 println(pwd())
 pwd()
 ```
 ## Plate 53
-![Plot!](../../figures/original-plate-53.jpg)
+![Plot!](../figures/original-plate-53.jpg)

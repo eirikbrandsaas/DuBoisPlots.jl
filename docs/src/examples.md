@@ -3,6 +3,20 @@
 To show how to use the package in more detail we show how to use the recipes to replicate 
 the original plates by DuBois.
 
+## testing
+1
+```@raw html
+<img src="../figures/original-plate-07.jpg" width="660px"/>
+```
+2
+```@raw html
+<img src="../../figures/original-plate-07.jpg" width="660px"/>
+```
+3
+```@raw html
+<img src="../../../figures/original-plate-07.jpg" width="660px"/>
+```
+
 ## Plate 7
 ![Plot!](../../figures/original-plate-07.jpg)
 

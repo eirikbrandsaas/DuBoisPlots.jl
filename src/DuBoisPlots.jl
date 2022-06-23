@@ -22,10 +22,10 @@ include("utilities.jl")
 DuBoisData = (
     Plate7 =_Plate7df(),
     Plate10 =_Plate10df(),
-    Plate11 =_Plate10df(),
-    Plate25 =_Plate10df(),
-    Plate51 =_Plate10df(),
-    Plate53 =_Plate10df(),
+    Plate11 =_Plate11df(),
+    Plate25 =_Plate25df(),
+    Plate51 =_Plate51df(),
+    Plate53 =_Plate53df(),
 )
 
 

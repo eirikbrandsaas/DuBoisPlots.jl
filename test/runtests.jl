@@ -111,7 +111,7 @@ end
 @testset "Data" begin
     @test DuBoisData.Plate7.Year[1] == 1790
     @test DuBoisData.Plate10.Population[1] == "Germany"
-    @test DuBoisData.Plate11.Population[1] == "8025"
+    @test DuBoisData.Plate11.Population[1] == 78139
     @test DuBoisData.Plate51.Year[1] == 1790
-    @test DuBoisData.Plate53.Married[1] == 30
+    @test DuBoisData.Plate53.Married[end] == 30
 end

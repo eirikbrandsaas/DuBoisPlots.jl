@@ -18,7 +18,7 @@ function Plate11(data::DataFrame, vals::Symbol,
   show_axes = "",
   title = "", lab1="", lab2="", lab3="", lab4="")
 
-  df = data
+  df = copy(data)
   fig = Figure(resolution = (792,1008).*2) # Create figure element
   ax_title = Axis(
     fig[1:2, 1:60],  # Create an empty axis (control grids here) (which is the [1,1] "subplot")

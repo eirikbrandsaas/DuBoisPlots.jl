@@ -10,7 +10,8 @@ df = DataFrame(Year = 1:6, Value = rand(6))
 Plate25(df, :Year, :Value, "Title")
 ```
 """
-function Plate25(df::DataFrame,spiral::Symbol, len::Symbol, title = "")
+function Plate25(data::DataFrame,spiral::Symbol, len::Symbol, title = "")
+  df = copy(data)
   ## Assertions ##
   @assert size(df)[2] == 2 # There should be two columns: "Years" and "Household Value"
   #@assert size(df)[1] == 5

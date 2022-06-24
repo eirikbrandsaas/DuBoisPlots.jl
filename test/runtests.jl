@@ -6,7 +6,7 @@ using CSV
 
 @testset "Plate 7" begin
     # Simple test
-    p = Plate7(DuBoisData.Plate7, :t)
+    p = Plate7(DuBoisData.Plate7, :)
 
 end
 

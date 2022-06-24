@@ -24,6 +24,7 @@ nothing  #hide
 |:-------------------------------------------:|:---------------------------|
 |![Plot!](plate11_index.png)|![Replication](plate51_index.png)|
 
+```
 
 ## Index
 ```@index

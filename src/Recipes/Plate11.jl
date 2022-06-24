@@ -12,11 +12,13 @@ z = Plate11(data, :Population,[-0.0,0.12], [0.09,0.1], [0.025,0.075], [0.03,-0.0
 " Negroes living in the country and villages")
 ```
 """
-function Plate11(df::DataFrame, vals::Symbol,
+function Plate11(data::DataFrame, vals::Symbol,
   lab1_pos, lab2_pos, lab3_pos, lab4_pos,
   lab5_pos::Array,
   show_axes = "",
   title = "", lab1="", lab2="", lab3="", lab4="")
+
+  df = copy(data)
   fig = Figure(resolution = (792,1008).*2) # Create figure element
   ax_title = Axis(
     fig[1:2, 1:60],  # Create an empty axis (control grids here) (which is the [1,1] "subplot")

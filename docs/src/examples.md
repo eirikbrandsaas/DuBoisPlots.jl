@@ -17,8 +17,8 @@ save("plate7.png", p) # hide
 nothing # hide
 ```
 
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original | Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-07.jpg)|![Replication](plate7.png)| --> -->
 
 
@@ -33,8 +33,8 @@ save("plate10.png", p) #hide
 nothing  #hide
 ```
 
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original | Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-10.jpg)|![Replication](plate10.png)|
 
 ## Plate 11
@@ -49,8 +49,8 @@ p = Plate11(DuBoisData.Plate11,:Population,
 save("plate11.png", p) #hide
 nothing  #hide
 ```
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original| Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-11.jpg)|![Replication](plate11.png)|
 
 ## Plate 25
@@ -60,8 +60,8 @@ p = Plate25(DuBoisData.Plate25,:Year,:Value,
 save("plate25.png", p) # hide
 nothing # hide
 ```
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original | Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-25.jpg)|![Replication](plate25.png)|
 
 ## Plate 51
@@ -73,8 +73,8 @@ p = Plate51(DuBoisData.Plate51, :Year;
 save("plate51.png", p)  # hide
 nothing # hide
 ```
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original | Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-51.jpg)|![Replication](plate51.png)|
 
 
@@ -89,6 +89,6 @@ save("plate53.png", p) # hide
 nothing # hide
 ```
 
-|Original                                     |Replication                 |
-|:-------------------------------------------:|:---------------------------|
+| Original | Replication |
+| :-: | :-: |
 |![Plot!](assets/original-plate-53.jpg)|![Replication](plate53.png)|

@@ -81,7 +81,7 @@ nothing # hide
 ## Plate 53
 ```@example long
 p = Plate53(DuBoisData.Plate53,:Ages,:Gender,
-        [:Single, :Married, :Widowed],[45 1.2; 55 4.7; 95 8.5], [25 2; 45 5.5; 50 8.5],
+        [:Single, :Married, :Widowed],[45 1.2; 55 4.7; 93 8.], [25 2; 45 5.5; 65 8.],
         title_1 = "Conjugal condition of American Negroes according to age periods.",
         title_2 = "Condition conjugale des Negres Americains au point de vue de l' age.",
         subtitle = "Done by Atlanta University.", bot_lab = "PER CENTS.")

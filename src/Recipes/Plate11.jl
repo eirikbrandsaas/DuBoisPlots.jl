@@ -4,6 +4,8 @@ Replicates Plate 11 (Unusual line chart).
 You must pass a DataFrame two columns. The first column should be strings with the names of each category in the data. The
 second column should be numeric values corresponding to each of those categories. There can only be 4 rows (maximum of 4 categories).
 
+For manual label placement set `show_axes=true`
+
 ```julia
 data = CSV.read(joinpath(@__DIR__,"../../data/original/Plate11.csv"),DataFrame)
 z = Plate11(data, :Population,[-0.0,0.12], [0.09,0.1], [0.025,0.075], [0.03,-0.09], [0.035,-0.035],
@@ -35,7 +37,6 @@ function Plate11(data::DataFrame, vals::Symbol,
   )
 
   if show_axes == "no"
-    @warn "If you need to see axes to place labels, set value to 'yes'."
    hidespines!(ax)
    hidespines!(ax_title)
    hidespines!(ax_empty)

@@ -4,7 +4,9 @@ CurrentModule = DuBoisPlots
 
 # DuBoisPlots
 
-The package exports functions `PlateX(df::DataFrame,args;OptionalArgs)` that are used to replicate a specific plate. In addition, it also exports all the original data in `DuBoisData.PlateX`. For side-by-side to comparisons for all plots see [Examples](@ref).
+The package exports functions `PlateX(df::DataFrame,args;OptionalArgs)` that are used to replicate a specific plate. In addition, it also exports all the original data in `DuBoisData.PlateX`. 
+
+The [Examples](@ref) page displays the set of currently included plates and side-by-side comparisons to the original plates.
 
 To recreate Plates 11 and 51 you would do
 ```@example index
@@ -28,10 +30,4 @@ nothing  #hide
 
 ## Index
 ```@index
-```
-
-## Automatic docs
-
-```@autodocs
-Modules = [DuBoisPlots]
 ```

@@ -111,21 +111,21 @@ function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array,
   colors = [colorant"#4682B4",colorant"#DC143C", colorant"#00AA00", colorant"#FFD700",  colorant"#FFC0CB"] # colors are not in the right order...need to figure out
 
   bar1 = barplot!(ax1,repCat,plots1,
-  stack=grp,
-  color=colors[grp],
-  colormap= colors,
-  label = symb_vec[grp],
-  width=1.10,
-  direction = :x
+    stack=grp,
+    color=colors[grp],
+    colormap= colors,
+    label = symb_vec[grp],
+    width=1.27, # Hack to force bars to overlap
+    direction = :x
   )
 
   bar2 = barplot!(ax2,repCat,plots2,
-  stack=grp,
-  color=colors[grp],
-  colormap=colors,
-  width=1.10,
-  label = symb_vec[grp],
-  direction = :x
+    stack=grp,
+    color=colors[grp],
+    colormap=colors,
+    width=1.27,
+    label = symb_vec[grp],
+    direction = :x
   )
 
   colgap!(gp,0)
@@ -156,8 +156,8 @@ function Plate53(df::DataFrame, y_var::Symbol, cat_var::Symbol, symb_vec::Array,
      ix2 = lab_pos_2[i,:][1]
      iy2 = lab_pos_2[i,:][2]
      label = uppercase(string(symb_vec[i]))
-     text!(ax1, label, position = Point.(ix1,iy1))
-     text!(ax2, label, position = Point.(ix2,iy2))
+     text!(ax1, label, position = Point.(ix1,iy1),rotation=45.0)
+     text!(ax2, label, position = Point.(ix2,iy2),rotation=-45.0)
    end
     # This part of the if statement will automatically place labels.
   elseif typeof(lab_pos_1) == String && typeof(lab_pos_2) == String

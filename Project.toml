@@ -13,6 +13,7 @@ Weave = "44d3d7a6-8a23-5bf8-98c5-b353f8df5ec9"
 
 [compat]
 CSV = "0.10"
+CairoMakie = "0.10"
 Colors = "0.12"
 DataFrames = "1"
 Weave = "0.10"

@@ -11,7 +11,7 @@ using CairoMakie # hide
 ## Plate 7
 ```@example long
 p = Plate7(DuBoisData.Plate7, :Year; 
-        title="Comporative Increase if White and Colored \n Population of Georgia", 
+        title="Comparative Increase of White and Colored \n Population of Georgia", 
         xlabel = "Percent")
 save("plate7.png", p) # hide
 nothing # hide
